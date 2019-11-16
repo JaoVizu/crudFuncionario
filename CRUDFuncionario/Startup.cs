@@ -39,6 +39,7 @@ namespace CRUDFuncionario
             var connection = Configuration["ConexaoMySql:MySqlConnectionString"];
             services.AddDbContext<DepartamentoContext>(options => options.UseMySQL(connection));
             services.AddDbContext<FuncionarioContext>(options => options.UseMySQL(connection));
+            services.AddDbContext<GradeSalarioContext>(options => options.UseMySQL(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

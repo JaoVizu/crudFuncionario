@@ -1,4 +1,4 @@
-﻿@model CRUDFuncionario.Models.Departamento
+﻿@model CRUDFuncionario.Models.GradeSalario
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,22 +6,22 @@
 
 <h1>Editar</h1>
 
-<h4>Departamento</h4>
+<h4>Salario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id_departamento" />
+            <input type="hidden" asp-for="Id_salario" />
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+                <label asp-for="Min_salario" class="control-label"></label>
+                <input asp-for="Min_salario" class="form-control" />
+                <span asp-validation-for="Min_salario" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
+                <label asp-for="Max_salario" class="control-label"></label>
+                <input asp-for="Max_salario" class="form-control" />
+                <span asp-validation-for="Max_salario" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fg_ativo" class="control-label"></label>

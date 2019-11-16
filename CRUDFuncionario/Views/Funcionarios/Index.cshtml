@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CRUDFuncionario.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro de Funcionários</h1>
+
+<p>
+    <a asp-action="Create">Cria Novo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_gerente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dt_nascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fg_ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_gerente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dt_nascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fg_ativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento.Id_departamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_funcionario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_funcionario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_funcionario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
